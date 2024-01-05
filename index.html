@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+	<input type="text" name="name" id="name">
+	<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" name="email" id="email">
+	<input type="text" name="mobile" id="mobile">
+	<hr>
+	<h1 id="dName">NAME</h1>
+	<h2 id="dGender">GENDER</h2>
+	<h3 id="dEmail">EMAIL</h3>
+	<h4 id="dMobile">MOBILE</h4>
+	<hr>
+	<button onclick="showName()">NAME</button>
+	<button onclick="showGender()">GENDER</button>
+	<button onclick="showEmail()">EMAIL</button>
+	<button onclick="showMobile()">MOBILE</button>
+	<button onclick="resetForm()">RESET FORM</button>
+	<button onclick="resetDisplay()">RESET DISPLAY</button>
+	<script type="text/javascript">
+		
+		function showName() {
+			// Show filled name inside h1
+			const nameInput=document.getElementById("name")
+			const nameTag=document.getElementById("dName")
+			if(nameInput.value!==""){
+				nameTag.textContent=nameInput.value
+			}
+		}
+
+		function showGender() {
+			// Show the selected gender inside h2
+			const genderInput=document.getElementById("gender")
+			const genderTag=document.getElementById("dGender")
+			if(genderInput.value!==""){
+				genderTag.textContent=genderInput.value
+			}
+		}
+
+		function showEmail() {
+			// Show the filled email inside h3
+			const emailInput=document.getElementById("email")
+			const emailTag=document.getElementById("dEmail")
+			if(emailInput.value!==""){
+				emailTag.textContent=emailInput.value
+			}
+		}
+
+		function showMobile() {
+			// Show the filled mobile inside h4
+			const mobileInput=document.getElementById("mobile")
+			const mobileTag=document.getElementById("dMobile")
+			if(mobileInput.value!==""){
+				mobileTag.textContent=mobileInput.value
+			}
+			
+		}
+
+		function resetForm() {
+			// Reset all the form elements to default values (blank "")
+			const genderInput=document.getElementById("gender")
+			const emailInput=document.getElementById("email")
+			const mobileInput=document.getElementById("mobile")
+			const nameInput=document.getElementById("name")
+			if(genderInput.value!==""){
+				genderInput.value=""
+			}
+			if(emailInput.value!==""){
+				emailInput.value=""
+			}
+			if(mobileInput.value!==""){
+				mobileInput.value=""
+			}
+			if(nameInput.value!==""){
+				nameInput.value=""
+			}		
+			
+		}
+
+		function resetDisplay() {
+			// Reset all the headings (h1, h2, h3, h4) to blank values
+			const genderTag=document.getElementById("dGender")
+			const emailTag=document.getElementById("dEmail")
+			const mobileTag=document.getElementById("dMobile")
+			const nameTag=document.getElementById("dName")
+			genderTag.textContent="GENDER"
+			emailTag.textContent="EMAIL"
+			mobileTag.textContent="MOBILE"
+			nameTag.textContent="NAME"
+		}
+	</script>
+</body>
+</html>
